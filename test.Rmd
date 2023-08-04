@@ -1,0 +1,175 @@
+---
+title: "Test 1"
+output: html_notebook
+---
+
+| Test 1                         |                Data Analysis with R |
+| :---                           |                                ---: |
+| Due by 8:00 PM on Thu Sep 28   | Business Analytics Graduate Program |
+| Submit via GitHub              |                 BAIS:6060 Fall 2023 |
+
+# Instructions
+
+**Resubmit your completed notebook back to GitHub by 9:00 PM.**
+
+*Late policy:* For every 10-minute period your notebook is turned in
+past 9:00 PM (including the first 10-minute period), you will lose 25%
+of the test points. For example, if `test.Rmd` is turned in at 9:01 PM,
+you will lose 25%.
+
+This is an individual exam. No communication with anyone else is
+allowed. However, the exam is open-notes and open-Internet. Observe all
+rules as specified on the homeworks as usual. As a reminder, please do
+not use Excel to save your CSV file.
+
+You should have received the exam materials (including this file,
+`test.Rmd`) from GitHub. Complete the exercises below in order. Before the
+time limit has expired, upload only your modified `test.Rmd` to GitHub.
+
+Request: Do not use the `scales` library as it may cause a conflict with
+`read_csv`.
+
+The data set `data.csv` contains information about bank loans, where each
+row corresponds to a specific loan by a specific bank customer. The columns
+are as follows:
+
+- `Income` is the customer's annual income (in $);
+
+- `Tenure` is the customer's length of employment at his or her current
+job;
+
+- `FICO` is the customer's FICO credit score (higher is better);
+
+- `Origination` is the date that the loan was approved;
+
+- `Amount` is the loan amount (in $);
+ 
+- `Grade` is the bank's internal letter grade given to the loan, where
+"A" is the top grade.
+
+# Exercises
+
+```{r}
+
+```
+
+## 1 (12 points)
+
+Read and transform `data.csv `into a data frame called `df` so that
+`Income` is numeric/double, `Tenure` is factor, `FICO` is integer,
+`Origination` is character, `Amount` is integer, and `Grade` is factor.
+Treat the empty string, "NA", and "n/a" as missing values.
+
+```{r}
+
+```
+
+## 2 (4 points)
+
+Remove all rows of `df` having at least one missing value.
+
+```{r}
+
+```
+
+## 3 (6 points)
+
+Calculate half the median loan amount and save it in a variable called
+`half_med`.
+
+```{r}
+
+```
+
+## 4 (8 points)
+
+Keep only the rows corresponding to: (i) a positive value of `Income`;
+and (ii) a grade which is "A", "B", or "C". Be sure to save the results
+back to `df`.
+
+```{r}
+
+```
+
+## 5 (8 points)
+
+Calculate the number of entries in the `FICO` column, which are not
+NA's, i.e., the number of entries in `FICO` which contain actual data.
+Save the result in `num_not_na`. [Hint: Please do not hard code your
+answer. Instead, use R functions to calculate it.]
+
+```{r}
+
+```
+
+## 6 (8 points)
+
+Create box plots of `Income` on `Grade` with `Income` logged. Export the
+plot to a file called `graphic.png`. [Note: Just do the basic plot. Do
+not add titles; do not try to make the plot beautiful.]
+
+```{r}
+
+```
+
+## 7 (10 points)
+
+In `Tenure`, reorder the levels so that they are in increasing order
+based on the amount of tenure, i.e., "0 years" is the first level and
+"10+ years" is the last.
+
+```{r}
+
+```
+
+## 8 (10 points)
+
+Create a table called `FICO_table` with `Tenure` in the rows, `Grade` in
+the columns, and average FICO score in the table values.
+
+```{r}
+
+```
+
+## 9 (8 points)
+
+Create a new column in `df` called `Date`, which stores the contents of
+`Origination` properly converted to the `Date` class.
+
+```{r}
+
+```
+
+## 10 (10 points)
+
+Create a new factor column in `df` called `FICO_level` with levels
+corresponding to 601-700 (inclusive), 701-800 (inclusive), and 801-900
+(inclusive). Name the levels "good", "better", and "best" in that order.
+
+```{r}
+
+```
+
+## 11 (10 points)
+
+In a new data frame called `best_customers`, store the records of `df`
+corresponding to the top-5 customers in terms of highest income, where
+these 5 are themselves chosen from the top-100 customers in terms of
+highest FICO score. Sort `best_customers` by FICO score in descending
+order and then by income in ascending order. [Hint: Make sure to ungroup
+`df` first.]
+
+```{r}
+
+```
+
+## 12 (6 points)
+
+Look at help on the `which(...)` command, and then use it to find the
+row indices (or row positions) of all records with `Income` above
+$50,000 and `Grade` equal to "A" or "B". Save the row indices in an
+object called `row_indices`.
+
+```{r}
+
+```
