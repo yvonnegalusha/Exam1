@@ -10,12 +10,11 @@ output: html_notebook
 
 # Instructions
 
-**Submit your completed notebook to codePost by 8:00 PM.**
+**Submit your work to codePost by 8:00 PM. You can only submit it once.**
 
-*Late policy:* For every 10-minute period your notebook is turned in
-past 8:00 PM (including the first 10-minute period), you will lose 25%
-of the test points. For example, if `test.Rmd` is turned in at 8:01 PM,
-you will lose 25%.
+*Late policy:* For a 10-minute period your work is turned in past 8:00 PM, 
+you will lose 25% of the test points. For example, if your work is turned in 
+at 8:01 PM, you will lose 25%. After 10 minutes, no late work is accepted.
 
 This is an individual exam. No communication with anyone else is
 allowed. However, the exam is open-notes and open-Internet. Observe all
@@ -24,10 +23,9 @@ not use Excel to save your CSV file.
 
 You should have received the exam materials (including this file,
 `test.Rmd`) from GitHub. Complete the exercises below in order. Before the
-time limit has expired, upload only your modified `test.Rmd` to codePost.
+time limit has expired, upload the requested files to codePost.
 
-Request: Do not use the `scales` library as it may cause a conflict with
-`read_csv`.
+Do not use the `scales` library as it may cause a conflict with `read_csv`.
 
 The data set `data.csv` contains information about bank loans, where each
 row corresponds to a specific loan by a specific bank customer. The columns
@@ -43,12 +41,16 @@ are as follows:
 
 - `Amount` is the loan amount (in $);
  
-- `Grade` is the bank's internal letter grade given to the loan, where
-"A" is the top grade.
+- `Grade` is the bank's internal letter grade given to the loan, where A" is 
+   the top grade.
+   
+When done, create a `solution.R` script file and place all R code in it. Be 
+sure that it runs stand alone, as this is what I will grade.
 
-# Exercises
+# Exercises (add all library commands here)
 
 ```{r}
+
 
 ```
 
@@ -57,26 +59,30 @@ are as follows:
 Read and transform `data.csv `into a data frame called `df` so that
 `Income` is numeric/double, `Tenure` is factor, `FICO` is integer,
 `Origination` is character, `Amount` is integer, and `Grade` is factor.
-Treat the empty string, "NA", and "n/a" as missing values.
+Treat the empty string, "NA", and "n/a" as missing values. Write `df` to
+a csv file called '1.csv'. Be sure to use read_csv with my_col_types set.
 
 ```{r}
+
 
 ```
 
 ## 2 (4 points)
 
-Remove all rows of `df` having at least one missing value.
+Remove all rows of `df` having at least one missing value. Write `df` to
+a csv file called '2.csv'.
 
 ```{r}
+
 
 ```
 
 ## 3 (6 points)
 
-Calculate half the median loan amount and save it in a variable called
-`half_med`.
+Calculate half the median loan amount and save it in a variable called `half_med`.
 
 ```{r}
+
 
 ```
 
@@ -84,9 +90,10 @@ Calculate half the median loan amount and save it in a variable called
 
 Keep only the rows corresponding to: (i) a positive value of `Income`;
 and (ii) a grade which is "A", "B", or "C". Be sure to save the results
-back to `df`.
+back to `df`. Write `df` to a csv file called '4.csv'.
 
 ```{r}
+
 
 ```
 
@@ -95,19 +102,22 @@ back to `df`.
 Calculate the number of entries in the `FICO` column, which are not
 NA's, i.e., the number of entries in `FICO` which contain actual data.
 Save the result in `num_not_na`. [Hint: Please do not hard code your
-answer. Instead, use R functions to calculate it.]
+answer, you will lose points. Instead, use R functions to calculate it.]
 
 ```{r}
+
 
 ```
 
 ## 6 (8 points)
 
 Create box plots of `Income` on `Grade` with `Income` logged. Export the
-plot to a file called `graphic.png`. [Note: Just do the basic plot. Do
-not add titles; do not try to make the plot beautiful.]
+plot to a file called `graphic.png` with width of 4, height of 4, and 
+dpi of 600. [Note: Just do the basic plot. Do not add titles; do not try 
+to make the plot beautiful.]
 
 ```{r}
+
 
 ```
 
@@ -115,27 +125,32 @@ not add titles; do not try to make the plot beautiful.]
 
 In `Tenure`, reorder the levels so that they are in increasing order
 based on the amount of tenure, i.e., "0 years" is the first level and
-"10+ years" is the last.
+"10+ years" is the last. Save in vector `my_levels`. Write `my_levels` 
+to a csv file called '7.csv'.
 
 ```{r}
+
 
 ```
 
 ## 8 (10 points)
 
 Create a table called `FICO_table` with `Tenure` in the rows, `Grade` in
-the columns, and average FICO score in the table values.
+the columns, and average FICO score in the table values. 
 
 ```{r}
+
 
 ```
 
 ## 9 (8 points)
 
 Create a new column in `df` called `Date`, which stores the contents of
-`Origination` properly converted to the `Date` class.
+`Origination` properly converted to the `Date` class. Write `df`to a csv 
+file called '9.csv'.
 
 ```{r}
+
 
 ```
 
@@ -144,8 +159,10 @@ Create a new column in `df` called `Date`, which stores the contents of
 Create a new factor column in `df` called `FICO_level` with levels
 corresponding to 601-700 (inclusive), 701-800 (inclusive), and 801-900
 (inclusive). Name the levels "good", "better", and "best" in that order.
+Write `df` to a csv file called '10.csv'.
 
 ```{r}
+
 
 ```
 
@@ -156,9 +173,10 @@ corresponding to the top-5 customers in terms of highest income, where
 these 5 are themselves chosen from the top-100 customers in terms of
 highest FICO score. Sort `best_customers` by FICO score in descending
 order and then by income in ascending order. [Hint: Make sure to ungroup
-`df` first.]
+`df` first.]  Write `best_customers` to a csv file called '11.csv'.
 
 ```{r}
+
 
 ```
 
@@ -167,8 +185,9 @@ order and then by income in ascending order. [Hint: Make sure to ungroup
 Look at help on the `which(...)` command, and then use it to find the
 row indices (or row positions) of all records with `Income` above
 $50,000 and `Grade` equal to "A" or "B". Save the row indices in an
-object called `row_indices`.
+object called `row_indices`. 
 
 ```{r}
+
 
 ```
