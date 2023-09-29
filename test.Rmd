@@ -112,7 +112,7 @@ answer, you will lose points. Instead, use R functions to calculate it.]
 ## 6 (8 points)
 
 Create box plots of `Income` on `Grade` with `Income` logged. Export the
-plot to a file called `graphic.png` with width of 4, height of 4, and 
+plot to a file called `graphic.png` with width of 5, height of 4, and 
 dpi of 600. [Note: Just do the basic plot. Do not add titles; do not try 
 to make the plot beautiful.]
 
@@ -136,7 +136,8 @@ to a csv file called '7.csv'.
 ## 8 (10 points)
 
 Create a table called `FICO_table` with `Tenure` in the rows, `Grade` in
-the columns, and average FICO score in the table values. 
+the columns, and average FICO score in the table values. Write `FICO_table` 
+to a csv file called '8.csv'.
 
 ```{r}
 
