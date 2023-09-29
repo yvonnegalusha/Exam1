@@ -125,8 +125,7 @@ to make the plot beautiful.]
 
 In `Tenure`, reorder the levels so that they are in increasing order
 based on the amount of tenure, i.e., "0 years" is the first level and
-"10+ years" is the last. Save in vector `my_levels`. Write `my_levels` 
-to a csv file called '7.csv'.
+"10+ years" is the last. Save in vector `my_levels`.
 
 ```{r}
 
